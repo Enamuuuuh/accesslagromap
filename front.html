@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="7aPdTML02zyoO-gF__8dML1OJbGpPTUnFGe8KxfmPhk" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Computer and Technology College Lagro Campus Map</title>
+    <link rel="icon" type="img" href="img/logo1.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family:'cute';
+        }
+        .map-container {
+            display: none;
+            text-align: center;
+            position: relative;
+        }
+        .map-image {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+        }
+        @font-face {
+        font-family: 'cute';
+        src: url(fonts/Nexa-Heavy.ttf);
+        font-weight: normal;
+        font-style: normal;
+         }
+        .marker {
+            position: absolute;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 1vw;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+        /* Ensure marker colors apply properly */
+        .ground .marker { background-color: #98D8EF ; color: #000000;}
+        .first .marker { background-color: #FADA7A ; color: #000000;}
+        .second .marker { background-color: #EBE8DB; color: #000000;}
+        .third .marker { background-color: #ECDCBF ; color: #000000;}
+        .popup {
+            display: none;
+            position: absolute;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        .popup img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function showPopup(marker) {
+            var popup = marker.querySelector('.popup');
+            popup.style.display = 'block';
+        }
+        function hidePopup(marker) {
+            var popup = marker.querySelector('.popup');
+            popup.style.display = 'none';
+        }
+        function showFloor(floor) {
+            document.querySelectorAll('.map-container').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.map-container').forEach(el => el.classList.remove('ground', 'first', 'second', 'third'));
+            var selectedFloor = document.getElementById(floor);
+            selectedFloor.style.display = 'block';
+            selectedFloor.classList.add(floor);
+        }
+    </script>
+</head>
+<body style="background-color: #242B66;">
+    <div class="container py-5">
+        <div class="container-fluid p-5" style="background-color: #EEEDE7">
+            <h6 class="text-center"><img src="img/logo.png" style="max-width: 100%; height: auto;">Lagro Branch</h6>
+        </div>
+        <br>
+        <p class="text-center text-white" style="background-color: #BE2A33;">Select a floor to navigate:</p>
+        <div class="d-flex justify-content-center mb-4">
+            <select class="custom-select w-50" onchange="showFloor(this.value)">
+                <option value="ground">Ground Floor</option>
+                <option value="first">First Floor</option>
+                <option value="second">Second Floor</option>
+                <option value="third">Third Floor</option>
+            </select>
+        </div>
+        <div class="container p-3" style="background-color: #EEEDE7">
+                <div id="ground" class="map-container ground" style="display: block;">
+                    <h2>Ground Floor</h2>
+                    <img src="img/grndf.jpg" alt="Ground Floor" class="map-image">
+                    <div class="marker" style="top: 25%; right: 10%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Entrance
+                        <div class="popup"><img src="img/entrance.jpg" alt="Entrance"></div>
+                    </div>
+                    <div class="marker" style="top: 52%; right: 6%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Faculty Office
+                        <div class="popup"><img src="img/faculty_office.jpg" alt="Faculty Office"></div>
+                    </div>
+                    <div class="marker" style="top: 50%; left: 25%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Gym
+                        <div class="popup"><img src="img/gym.jpg" alt="Gym"></div>
+                    </div>
+                    <div class="marker" style="top: 70%; right: 28%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Restroom
+                        <div class="popup"><img src="img/restroom.jpg" alt="Restroom"></div>
+                    </div>
+                    <div class="marker" style="bottom:45%; right: 31%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Stairs
+                        <div class="popup"><img src="img/restroom.jpg" alt="Stairs"></div>
+                    </div>
+                </div>
+                
+                <div id="first" class="map-container first">
+                    <h2>First Floor</h2>
+                    <img src="img/bp1f.jpg" alt="First Floor" class="map-image">
+                    <div class="marker" style="top: 30%; left: 50%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Kitchen, Bar & Beverage etc.
+                        <div class="popup"><img src="img/kitchen.jpg" alt="Kitchen"></div>
+                    </div>
+                    <div class="marker" style="bottom:20%;left: 31%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Stairs
+                        <div class="popup"><img src="img/restroom.jpg" alt="Stairs"></div>
+                    </div>
+                </div>
+                
+                <div id="second" class="map-container second">
+                    <h2>Second Floor</h2>
+                    <img src="img/bp2f.jpg" alt="Second Floor" class="map-image">
+                    <div class="marker" style="bottom: 20%; left: 13%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Clinic
+                        <div class="popup"><img src="img/clinic.jpg" alt="Clinic"></div>
+                    </div>
+                    <div class="marker" style="bottom: 10%; left: 32%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">FR
+                        <div class="popup"><img src="img/clinic.jpg" alt="Faculty's Restroom"></div>
+                    </div>
+                    <div class="marker" style="top: 30%; left: 30%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Room 2B
+                        <div class="popup"><img src="img/clinic.jpg" alt="Room 2B"></div>
+                    </div>
+                    <div class="marker" style="top: 45%; right: 37%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Control <br> Room
+                        <div class="popup"><img src="img/clinic.jpg" alt="Control Room"></div>
+                    </div>
+                    <div class="marker" style="top: 30%; right: 5%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Room 3B/Computer Lab
+                        <div class="popup"><img src="img/clinic.jpg" alt="ComLab"></div>
+                    </div>
+                    <div class="marker" style="bottom: 32%; right: 8%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Room 2F
+                        <div class="popup"><img src="img/clinic.jpg" alt="Room 2F"></div>
+                    </div>
+                    <div class="marker" style="bottom:11%; right: 47%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Stairs
+                        <div class="popup"><img src="img/restroom.jpg" alt="Stairs"></div>
+                    </div>
+                </div>
+            
+                <div id="third" class="map-container third">
+                    <h2>Third Floor</h2>
+                    <img src="img/bp3f.jpg" alt="Third Floor" class="map-image">
+                    <div class="marker" style="bottom: 15%; left: 42%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Female <br> Restroom
+                        <div class="popup"><img src="img/female_restroom.jpg" alt="Female Restroom"></div>
+                    </div>
+                    <div class="marker" style="bottom: 15%; right: 15%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Male <br> Restroom
+                        <div class="popup"><img src="img/female_restroom.jpg" alt="Male Restroom"></div>
+                    </div>
+                    <div class="marker" style="bottom: 40%; left: 13%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Guidance <br> Office
+                        <div class="popup"><img src="img/female_restroom.jpg" alt="Guidance Office"></div>
+                    </div>
+                    <div class="marker" style="top: 30%; right: 15%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Room <br> 3D
+                        <div class="popup"><img src="img/female_restroom.jpg" alt="Room 3D"></div>
+                    </div>
+                    <div class="marker" style="top: 30%; left: 42%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Library
+                        <div class="popup"><img src="img/female_restroom.jpg" alt="Library"></div>
+                    </div>
+                    <div class="marker" style="bottom:15%; right: 36%;" onmouseover="showPopup(this)" onmouseout="hidePopup(this)">Stairs
+                        <div class="popup"><img src="img/restroom.jpg" alt="Stairs"></div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="container-fluid p-1" style="background-color: #EEEDE7;">
+    <p class="text-right">&copy; 2025 Group ewan. All rights reserved.</p>
+</footer>
+</html>
